@@ -16,7 +16,6 @@ import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.update.ui.UpdateManagerUI;
 
 public class InstallWizardAction implements IWorkbenchWindowActionDelegate {
 
@@ -37,7 +36,10 @@ public class InstallWizardAction implements IWorkbenchWindowActionDelegate {
     private void openInstaller(final IWorkbenchWindow window) {
         BusyIndicator.showWhile(window.getShell().getDisplay(), new Runnable() {
             public void run() {
-                UpdateManagerUI.openInstaller(window.getShell());
+                // TODO: Temporarilly commented out due to compile failure for e4. 
+                // UpdateManagerUI was provisional API, should be migrated
+                // http://www.eclipse.org/eclipse/development/porting/4.2/incompatibilities.html#update-manager
+                // UpdateManagerUI.openInstaller(window.getShell());
             }
         });
     }
