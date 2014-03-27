@@ -174,8 +174,34 @@
                 <tycho.test.OSspecific />
             </properties>
         </profile>
+        
+        <profile>
+            <id>eclipse-3</id>
+            <activation>
+                <property>
+                    <name>eclipse</name>
+                    <value>3</value>
+                </property>
+            </activation>
+            <properties>
+                <target-artifactId>udig-indigo-target</target-artifactId>
+                <target-version>3.7</target-version>
+            </properties>
+        </profile>
+        <profile>
+            <id>eclipse-4</id>
+            <activation>
+                <property>
+                    <name>!eclipse</name>
+                </property>
+            </activation>
+            <properties>
+                <target-artifactId>udig-kepler-target</target-artifactId>
+                <target-version>4.3</target-version>
+            </properties>
+        </profile>
     </profiles>
-
+  
     <build>
         <plugins>
             <plugin>
@@ -190,12 +216,11 @@
                 <artifactId>target-platform-configuration</artifactId>
                 <version>${tycho-version}</version>
                 <configuration>
-                    <!-- target from sub-module eclipse-target-definition project -->
                     <target>
                         <artifact>
                             <groupId>org.locationtech.udig-target</groupId>
-                            <artifactId>udig-indigo-target</artifactId>
-                            <version>3.7</version>
+                            <artifactId>${target-artifactId}</artifactId>
+                            <version>${target-version}</version>
                         </artifact>
                     </target>
                     <resolver>p2</resolver>

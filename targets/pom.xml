@@ -24,5 +24,6 @@
 
     <modules>
         <module>indigo</module>
+		<module>kepler</module>
     </modules>
 </project>
