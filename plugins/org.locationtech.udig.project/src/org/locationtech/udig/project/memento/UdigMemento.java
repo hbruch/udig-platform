@@ -24,6 +24,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -92,6 +93,15 @@ public class UdigMemento implements IMemento {
 
     public IMemento[] getChildren( String type ) {
         return getTypeList(type).toArray(new IMemento[0]);
+    }
+    
+    public IMemento[] getChildren() {
+    	ArrayList<IMemento> mementos = new ArrayList<IMemento>();
+    	Collection<List<IMemento>> listsOfMementos = m_children.values();
+    	for (List<IMemento> typeSpecificMementos: listsOfMementos) {
+    		mementos.addAll(typeSpecificMementos);
+    	}
+    	return mementos.toArray(new IMemento[0]);
     }
 
     public Float getFloat( String key ) {
