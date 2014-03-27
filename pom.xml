@@ -238,13 +238,13 @@
                     </filters> 
                     -->
                     <!-- example 3: work around Equinox bug 348045 -->
-                    <filters>
+                    <!--filters>
                         <filter>
                             <type>eclipse-plugin</type>
                             <id>org.eclipse.jdt.core</id>
                             <removeAll/>
                         </filter>
-                    </filters>
+                    </filters>-->
 
                     <pomDependencies>consider</pomDependencies>
 
