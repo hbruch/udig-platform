@@ -114,42 +114,45 @@ If you add a depenedncy on any aspect of &quot;org.eclipse.*&quot; then please a
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-
+<!-- Not contained in e4-target-plattform (See http://www.eclipse.org/eclipse/development/porting/4.2/incompatibilities.html#update-manager)
    <plugin
          id="org.eclipse.update.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+-->
    <plugin
          id="org.eclipse.emf.common.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+<!-- TODO: I found no explicit references to this plugin. As it is seems not to be contained in target plattform: is it still required?
    <plugin
          id="org.apache.jasper"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+         -->
+<!-- Not contained in e4-target-plattform (See http://www.eclipse.org/eclipse/development/porting/4.2/incompatibilities.html#update-manager)
    <plugin
          id="org.eclipse.update.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+         -->
+<!-- TODO: I found no explicit references to this plugin (besides launch-configurations and tool-view.product). 
+     As it seems it is not to be contained in target plattform: is it still required?
    <plugin
          id="org.apache.commons.el"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+-->
    <plugin
          id="org.eclipse.core.net"
          download-size="0"
